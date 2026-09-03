@@ -1,5 +1,6 @@
 const express = require("express");
 const taskRoutes = require("./taskroute");
+const errorHandler = require("./errorHandler");
 
 const app = express();
 const PORT = 3000;
@@ -12,7 +13,9 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use("/tasks", taskRoutes);
+app.use("/api/tasks", taskRoutes);
+
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
