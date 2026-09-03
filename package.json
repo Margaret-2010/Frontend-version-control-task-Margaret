@@ -1,0 +1,13 @@
+{
+  "name": "backend-version-control-task",
+  "version": "1.0.0",
+  "description": "A simple task management REST API for demonstrating Git and GitHub workflows",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node --watch src/app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
