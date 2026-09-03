@@ -1,8 +1,5 @@
 const express = require("express");
-const {
-  getTasks,
-  getTaskById
-} = require("./controllers/taskController");
+const taskRoutes = require("./taskroute");
 
 const app = express();
 const PORT = 3000;
@@ -15,8 +12,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/api/tasks", getTasks);
-app.get("/api/tasks/:id", getTaskById);
+app.use("/tasks", taskRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
