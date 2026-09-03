@@ -1,0 +1,20 @@
+const express = require("express");
+const validateTask = require("validateTask");
+
+const {
+    getTasks,
+    getTaskById,
+    createTask,
+    updateTask,
+    deleteTask
+} = require("./taskcontroller");
+
+const router = express.Router();
+
+router.get("/", getTasks);
+router.get("/:id", getTaskById);
+router.post("/", validateTask, createTask);
+router.put("/:id", validateTask, updateTask);
+router.delete("/:id", deleteTask);
+
+module.exports = router;
